@@ -1,0 +1,71 @@
+import turtle
+# turtle.reset()
+# turtle.color("red")
+# turtle.pensize(5)
+# turtle.forward(100)
+# turtle.left(90)
+# turtle.forward(100)
+
+#
+# Übung: Formen
+# Zeichnen Sie folgende Formen mit Turtle:
+
+# # a)
+# turtle.shape("turtle")
+# turtle.forward(50)
+# turtle.left(90)
+# turtle.forward(50)
+# turtle.left(90)
+# turtle.forward(50)
+# turtle.left(90)
+# turtle.forward(50)
+# b)
+# turtle.forward(100)
+# turtle.left(90)
+# turtle.forward(50)
+# turtle.left(90)
+# turtle.forward(100)
+# turtle.left(90)
+# turtle.forward(50)
+# turtle.exitonclick()
+
+# c)
+# 
+# turtle.pensize(4)
+# turtle.color("blue")
+# turtle.left(45)
+# turtle.forward(50)
+# 
+# turtle.color("red")
+# turtle.right(90)
+# turtle.forward(50)
+# 
+# turtle.color("turquoise")
+# turtle.left(90)
+# turtle.forward(50)
+# 
+# turtle.color("black")
+# turtle.right(90)
+# turtle.forward(50)
+
+# d)/e)
+turtle.pensize(4)
+turtle.color("red")
+
+turtle.forward(50)
+turtle.left(120)
+turtle.forward(50)
+turtle.left(120)
+turtle.forward(50)
+turtle.color("light green")
+turtle.forward(50)
+turtle.left(120)
+turtle.forward(50)
+turtle.left(120)
+turtle.forward(50)
+turtle.color("blue")
+turtle.forward(50)
+turtle.left(120)
+turtle.forward(50)
+turtle.left(120)
+turtle.forward(50)
