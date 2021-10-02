@@ -1,6 +1,6 @@
 #
 #
-# Copyright 2021 Andreas la Roi
+# Copyright 2021 Andreas la Roi, Fabian Introvigne, Michael Schlotter, Alexander van Schie, Nadine Christen, Juliane Streitberg
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 # 
@@ -12,6 +12,7 @@
 # Hausaufgabe Turtle
 # Buchstaben zeichnen
 import turtle
+from turtle import Screen 
 
 # Wir schreiben Python:
 # Jede Gruppe schreibt einen Buchstaben (P-Y-T-H-O-N)
@@ -27,13 +28,14 @@ import turtle
 #
 turtle.speed(20)
 #turtle.cursor(hide)
-screen.setup(width, height)
+screen=Screen()
+screen.setup(1700, 600)
 #
 # An den linken Rand springen
 #
 turtle.penup()
 turtle.lt(180)
-turtle.fd(400)
+turtle.fd(900)
 turtle.lt(90)
 turtle.fd(200)
 turtle.lt(90)
@@ -105,9 +107,15 @@ def gruppe_JAMFAN_P():
     turtle.lt(20)
     turtle.fd(127)
     turtle.lt(90)
-    ## Für Kerning anpassen
-    turtle.fd(248)
+    ## Für Kerning anpassen (248 ist am ende der Box, 188 ist ohne Abstand) 
+    turtle.fd(188)
     ##/Kerning
-    turtle.exitonclick()
+   
 
 gruppe_JAMFAN_P()
+gruppe_JAMFAN_P()
+gruppe_JAMFAN_P()
+gruppe_JAMFAN_P()
+gruppe_JAMFAN_P()
+gruppe_JAMFAN_P()
+turtle.exitonclick()

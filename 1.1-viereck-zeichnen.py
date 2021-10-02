@@ -1,0 +1,28 @@
+import turtle as tl
+tl.speed(20)
+
+def viereck_zeichnen(farbe):
+    tl.fillcolor(farbe)
+    tl.begin_fill()
+    tl.fd(100)
+    tl.rt(90)
+    tl.fd(100)
+    tl.rt(90)
+    tl.fd(100)
+    tl.rt(90)
+    tl.fd(100)
+    tl.end_fill()
+
+tl.pensize(3)
+tl.pencolor("red")
+tl.lt(45)
+viereck_zeichnen("aquamarine")
+tl.rt(163)
+viereck_zeichnen("yellow")
+tl.rt(163)
+viereck_zeichnen("magenta")
+tl.rt(163)
+viereck_zeichnen("blue")
+tl.rt(163)
+viereck_zeichnen("chartreuse")
+turtle.exitonclick()
