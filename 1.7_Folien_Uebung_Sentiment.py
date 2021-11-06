@@ -1,10 +1,28 @@
+# Copyright (c) 2021 Andreas la Roi
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+# 
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+# 
 # Grundschritte für eine Sentiment-Analyse
-# Autor: Andreas la Roi
 from csv import reader
 artikel = "all_stories_temp_0_iso.txt"
 sentiment_ws_pos = 'SentiWS_v2.0_Positive.txt'
 sentiment_ws_neg = 'SentiWS_v2.0_Negative.txt'
-
 
 # 1. Text holen
 #     a. Von einer Textdatei: Schreiben Sie eine Funktion, die eine Textdatei einliest und als String zurückgib
@@ -13,14 +31,13 @@ try:
     with open(artikel, "r") as offene_datei:
         text = offene_datei.read()
 except:
-        print("Artikel-Datei kann icht geöffnet werden:", artikel)
-        exit()
+    print("Artikel-Datei kann icht geöffnet werden:", artikel)
+    exit()
 # 
 # 2. Text aufbereiten
 #     a. Gross/Kleinschreibung normalisieren: Wandeln Sie den gesamten Text in Kleinbuchstaben um
 
 text = text.lower()
-
 
 #     b. Sonderzeichen entfernen: Entfernen Sie alle Sonderzeichen aus dem Text.
 #         - Erst prüfen, welche Sonderzeichen es gibt: Dies sind !'(),-.:?«»  (gemäss sed s/'[a-zA-Z0-9]'/""/g)
@@ -35,7 +52,6 @@ woerter = text.split()
 # 3. Sentiment zählen
 #     a. Sentiment Lexikon einlesen:  Suchen und implementieren Sie ein Sentiment Lexikon.
 #        i. Einlesen, Auslesen, Abspeichern. Beachten Sie, dass das Lexikon "benutzbar" sein muss.
-
 
 
 # negatives Sentiment Lexikon auslesen und dict erstellen
@@ -53,8 +69,8 @@ try:
                     for word in row[2].split(sep=","):    
                         dict_neg[word] = float(row[1]) 
 except:
-        print("Negativer Sentiment-Wortschatz kann nicht geöffnet werden: ", sentiment_ws_neg)
-        exit()
+    print("Negativer Sentiment-Wortschatz kann nicht geöffnet werden: ", sentiment_ws_neg)
+    exit()
 
 
 # positoves Sentiment Lexikon auslesen und dict erstellen
@@ -72,8 +88,8 @@ try:
                     for word in row[2].split(sep=","):
                         dict_pos[word] = float(row[1]) 
 except:
-        print("Positiver Sentiment-Wortschatz kann nicht geöffnet werden: ", sentiment_ws_pos)
-        exit()
+    print("Positiver Sentiment-Wortschatz kann nicht geöffnet werden: ", sentiment_ws_pos)
+    exit()
         
 #     b. Mit Artikel abgleichen: Vergleichen Sie die Wörter im Artikel mit den Wörtern im Lexicon
 
