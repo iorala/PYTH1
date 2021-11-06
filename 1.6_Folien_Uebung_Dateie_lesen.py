@@ -6,13 +6,11 @@
 # Geben Sie Zeile für Zeile der Datei aus.
 # Nummerieren Sie die einzelnen Zeilen.
 # Geben Sie die 4. Zeile aus.
-datei_liste = []
 with open("pizza.txt", "r") as offene_datei:
     #print(offene_datei.read())
-    for zeile in offene_datei.readlines():
-        datei_liste.append(zeile)
-    print("alle Zeilen nummerieren")
-    for nummer,zeile in enumerate(datei_liste):
-        print((nummer+1), zeile)
-    print("\nZeile 4 ausgeben:", datei_liste[3] )
+    datei_liste = offene_datei.readlines()
+print("alle Zeilen nummerieren")
+for nummer,zeile in enumerate(datei_liste):
+    print((nummer+1), zeile, end='')
+print("\n\nZeile 4 ausgeben:\n", datei_liste[3], end='')
 

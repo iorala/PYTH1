@@ -11,13 +11,11 @@ original_zeilen = []
 
 try:
     with open(textdatei, "r") as original_datei:
-        for zeile in original_datei.readlines():
-            original_zeilen.append(zeile)
+        original_zeilen = original_datei.readlines()
             
 except:
     print(textdatei, "konnte nicht zum lesen geöffnet werden")
     
-
 
 try:
     with open(sicherung, "w") as backup_datei:
