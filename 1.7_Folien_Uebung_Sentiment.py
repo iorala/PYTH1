@@ -53,7 +53,6 @@ woerter = text.split()
 #     a. Sentiment Lexikon einlesen:  Suchen und implementieren Sie ein Sentiment Lexikon.
 #        i. Einlesen, Auslesen, Abspeichern. Beachten Sie, dass das Lexikon "benutzbar" sein muss.
 
-
 # negatives Sentiment Lexikon auslesen und dict erstellen
 dict_neg = {}
 
@@ -71,7 +70,6 @@ try:
 except:
     print("Negativer Sentiment-Wortschatz kann nicht geöffnet werden: ", sentiment_ws_neg)
     exit()
-
 
 # positoves Sentiment Lexikon auslesen und dict erstellen
 dict_pos = {}
@@ -92,7 +90,6 @@ except:
     exit()
         
 #     b. Mit Artikel abgleichen: Vergleichen Sie die Wörter im Artikel mit den Wörtern im Lexicon
-
 #
 ## Anscheinende sind wörter sowohl in der positiven, wie auch der negativen liste drin? 
 # for lemma in dict_pos.keys():
