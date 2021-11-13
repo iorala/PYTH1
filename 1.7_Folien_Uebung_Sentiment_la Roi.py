@@ -61,17 +61,17 @@ try:
         csv_reader = reader(open_file, dialect="excel-tab") # Reader wird mit der geöffneten Datei initialisiert
         for row in csv_reader:
             key = row[0].rsplit(sep="|")[0] # trennt das Wort vom POS-Tag
-            dict_neg[key] = float(row[1])
+            dict_neg[key.lower()] = float(row[1])
             # Für jede Flexion wird ein eigenener Eintrag erstelle, da wir noch kein stemming gelernt haben 
             if len(row) > 2:
                 if row[2] != "": # Aus irgendeinem Grund landen sonst leere Strings als key im dict?!
                     for word in row[2].split(sep=","):    
-                        dict_neg[word] = float(row[1]) 
+                        dict_neg[word.lower()] = float(row[1]) 
 except:
     print("Negativer Sentiment-Wortschatz kann nicht geöffnet werden: ", sentiment_ws_neg)
     exit()
 
-# positoves Sentiment Lexikon auslesen und dict erstellen
+# positives Sentiment Lexikon auslesen und dict erstellen
 dict_pos = {}
 
 try:
@@ -79,12 +79,12 @@ try:
         csv_reader = reader(open_file, dialect="excel-tab") # Reader wird mit der geöffneten Datei initialisiert
         for row in csv_reader:
             key = row[0].rsplit(sep="|")[0] # trennt das Wort vom POS-Tag
-            dict_pos[key] = float(row[1])
+            dict_pos[key.lower()] = float(row[1])
             # Für jede Flexion wird ein eigenener Eintrag erstelle, da wir noch kein stemming gelernt haben 
             if len(row) > 2:
                 if row[2] != "": # Aus irgendeinem Grund landen sonst leere Strings als key im dict?!
                     for word in row[2].split(sep=","):
-                        dict_pos[word] = float(row[1]) 
+                        dict_pos[word.lower()] = float(row[1]) 
 except:
     print("Positiver Sentiment-Wortschatz kann nicht geöffnet werden: ", sentiment_ws_pos)
     exit()
@@ -116,10 +116,11 @@ for wort in woerter:
         worte_neg.add((wort,dict_neg[wort]))
         counter_neg = counter_neg + 1
 
+print(dict_neg["gefahr"])
 #
 # 4. Ausgabe
 #     a. Geben Sie das Sentiment aus.
-print("Der Artikel enthält", counter_pos,"positive Wörter und", counter_neg,"negative. Die Summe positiven Werte beträgt", sentiment_pos, "diejenige der negativen", sentiment_neg,". für ein Total von", sentiment_pos + sentiment_neg)
+print("Die Artikel enthalten", counter_pos,"positive Wörter und", counter_neg,"negative. Die Summe positiven Werte beträgt", sentiment_pos, "diejenige der negativen", sentiment_neg,". für ein Total von", sentiment_pos + sentiment_neg)
 #     b. Geben Sie die negativsten Wörter aus.
 print("\nDie 10 negativsten Wörter und ihr Werte:")
 worte_neg_list = sorted(worte_neg,key=lambda score: score[1])
