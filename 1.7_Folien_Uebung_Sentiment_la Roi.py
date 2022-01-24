@@ -20,7 +20,7 @@
 # 
 # Grundschritte für eine Sentiment-Analyse
 from csv import reader
-artikel = "all_stories_temp_0_iso.txt"
+artikel = "all_stories_temp_0_iso_short.txt"
 sentiment_ws_pos = 'SentiWS_v2.0_Positive.txt'
 sentiment_ws_neg = 'SentiWS_v2.0_Negative.txt'
 
@@ -116,7 +116,6 @@ for wort in woerter:
         worte_neg.add((wort,dict_neg[wort]))
         counter_neg = counter_neg + 1
 
-print(dict_neg["gefahr"])
 #
 # 4. Ausgabe
 #     a. Geben Sie das Sentiment aus.
